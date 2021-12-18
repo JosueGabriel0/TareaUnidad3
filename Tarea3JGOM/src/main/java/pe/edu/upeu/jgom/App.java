@@ -30,7 +30,7 @@ public class App{
         MenuPrincipal a=new MenuPrincipal();
         LeerTeclado lt2=new LeerTeclado();
 
-        System.out.println(ANSI_GREEN_BACKGROUND+ANSI_BLACK+"\n°°°°°°°°°°°°°°°°°°°°°°°°°Bienvenido al sistema de la tarea 3°°°°°°°°°°°°°°°°°°°°°°°°°"+ANSI_RESET);
+        System.out.println(ANSI_GREEN_BACKGROUND+ANSI_BLACK+"\n°°°°°°°°°°°°°°°°°°°°°°°°°Bienvenido al programa de la tarea 3 by JGOM!°°°°°°°°°°°°°°°°°°°°°°°°°"+ANSI_RESET);
         a.menuprincipal();
         
 
