@@ -26,7 +26,7 @@ public class ResolucionTarea3{
 
     LeerTeclado lt3 = new LeerTeclado();
 
-    //Ejercicio 5 prueba
+    //Ejercicio 5 
     public void ejercicio5(){
         Object matriz5 [][] =new Object[5][5];
         int num=0;

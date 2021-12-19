@@ -1,5 +1,6 @@
 package pe.edu.upeu.jgom;
 
+import pe.edu.upeu.jgom.dao.Usuariodao;
 import pe.edu.upeu.jgom.tarea3.ResolucionTarea3;
 import pe.edu.upeu.jgom.tarea3.Tarea3InteraccionConElUsuario;
 import pe.edu.upeu.jgom.utils.LeerTeclado;
@@ -33,9 +34,26 @@ public class MenuPrincipal {
     Tarea3InteraccionConElUsuario t=new Tarea3InteraccionConElUsuario();
     LeerTeclado lt1=new LeerTeclado();
     FelizNavidad n=new FelizNavidad();
+
+    Usuariodao uDao;
+
+    public void mainLogin(){
+        uDao=new Usuariodao();
+      if (uDao.login()) {
+
+        menuprincipal();
+
+        
+      }else{
+        System.out.println("Intente Nuevamente!!");
+        mainLogin();
+      }
+
+    }
     
 
     public void menuprincipal(){
+      System.out.println(ANSI_GREEN_BACKGROUND+ANSI_BLACK+"\n°°°°°°°°°°°°°°°°°°°°°°°°°Bienvenido al programa de la tarea 3 by JGOM!°°°°°°°°°°°°°°°°°°°°°°°°°"+ANSI_RESET);
         System.out.println("\n"+ANSI_BLUE_BACKGROUND+ANSI_WHITE+"-----------------------------Bienvenido al menú PRINCIPAL-----------------------------"+ANSI_RESET);
        int y = lt1.leer(0, "\n"+ANSI_CYAN_BACKGROUND+ANSI_BLACK+"Elija el numero del ejercicio a revisar:"+ANSI_RESET+"\n"+
         ANSI_YELLOW+"\n1"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 5|"+ANSI_RESET+
@@ -51,7 +69,7 @@ public class MenuPrincipal {
         ANSI_YELLOW+"\n11"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 17|"+ANSI_RESET+
         ANSI_YELLOW+"\n12"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 18|"+ANSI_RESET+
         ANSI_YELLOW+"\n13"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_YELLOW+"|Ingresar al menú SECUNDARIO (LOS MISMOS EJERCICIOS PERO CON INTERACCIÓN CON LA PERSONA)|"+ANSI_RESET+
-        ANSI_YELLOW+"\n14"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa digite el numero 0|\n"+ANSI_RESET);
+        ANSI_YELLOW+"\n0"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa digite el numero 0|\n"+ANSI_RESET);
         
 
         while (y!=0){
@@ -101,7 +119,7 @@ public class MenuPrincipal {
             ANSI_YELLOW+"\n11"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 17|"+ANSI_RESET+
             ANSI_YELLOW+"\n12"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 18|"+ANSI_RESET+
             ANSI_YELLOW+"\n13"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_YELLOW+"|Ingresar al menú SECUNDARIO (LOS MISMOS EJERCICIOS PERO CON INTERACCIÓN CON LA PERSONA)|"+ANSI_RESET+
-            ANSI_YELLOW+"\n14"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa digite el numero 0|\n"+ANSI_RESET);
+            ANSI_YELLOW+"\n0"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa digite el numero 0|\n"+ANSI_RESET);
         }
     }
 
@@ -121,7 +139,7 @@ public class MenuPrincipal {
          ANSI_YELLOW+"\n10"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 14 (Interaccion con la persona)|"+ANSI_RESET+
          ANSI_YELLOW+"\n11"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 17 (Interaccion con la persona)|"+ANSI_RESET+
          ANSI_YELLOW+"\n12"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 18 (Interaccion con la persona)|"+ANSI_RESET+
-         ANSI_YELLOW+"\n13"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa y volver al menu principal digite el numero 0|\n"+ANSI_RESET);
+         ANSI_YELLOW+"\n0"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa y volver al menu principal digite el numero 0|\n"+ANSI_RESET);
          
  
          while (y!=0){
@@ -168,7 +186,7 @@ public class MenuPrincipal {
              ANSI_YELLOW+"\n10"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 14 (Interaccion con la persona)|"+ANSI_RESET+
              ANSI_YELLOW+"\n11"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 17 (Interaccion con la persona)|"+ANSI_RESET+
              ANSI_YELLOW+"\n12"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_CYAN+"|Ejercicio 18 (Interaccion con la persona)|"+ANSI_RESET+
-             ANSI_YELLOW+"\n13"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa y volver al menu principal digite el numero 0|\n"+ANSI_RESET);
+             ANSI_YELLOW+"\n0"+ANSI_RESET+ANSI_GREEN+" = "+ANSI_RESET+ANSI_RED+"|Para cerrar el programa y volver al menu principal digite el numero 0|\n"+ANSI_RESET);
          }
      }
 
